@@ -220,16 +220,20 @@ Func _UpdateDetectedCharacterDisplay($sCharacter, $iDetectedCount)
         $sClientLabel = "Detected Client: none"
     EndIf
 
+    Local $bLabelChanged = False
+
     If $sClientLabel <> $g_sLastDetectedClientLabel Then
         GUICtrlSetData($lblDetectedClient, $sClientLabel)
         $g_sLastDetectedClientLabel = $sClientLabel
+        $bLabelChanged = True
     EndIf
 
     If $sLabel <> $g_sLastDetectedCharacterLabel Then
         GUICtrlSetData($lblDetectedCharacter, $sLabel)
         $g_sLastDetectedCharacterLabel = $sLabel
+        $bLabelChanged = True
     EndIf
-    _SetCharacterSelectionState($g_bClientConnected)
+    If $bLabelChanged Then _SetCharacterSelectionState($g_bClientConnected)
 EndFunc
 
 Func _UpdateConnectedCharacterDisplay()
