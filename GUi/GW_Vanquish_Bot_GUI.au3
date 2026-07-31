@@ -699,9 +699,8 @@ Func _AppendConsoleLine($sLine)
 EndFunc
 
 Func _LogStartupBanner()
-    _AppendConsoleLine("--Initialising--")
-    _AppendConsoleLine("--Guild Wars Vanquish Bot--")
-    _AppendConsoleLine("--Brought to you by MrDomRocks--")
+    _AppendConsoleLine("Initialising Guild Wars Vanquish Bot.")
+    _AppendConsoleLine("Author: MrDomRocks")
     _AppendConsoleLine("")
 EndFunc
 

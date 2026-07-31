@@ -1171,16 +1171,16 @@ Func _AppendSpecialRouteEntries()
 EndFunc
 
 Func _ResolveRouteFunctionFromScriptName($sMapName)
-      Switch _NormalizeMapScriptNameForLookup($sMapName)
-          Case "IceDome"
-              Return "VQIcedome"
-      EndSwitch
-      Return "VQ" & $sMapName
+    Switch _NormalizeMapScriptNameForLookup($sMapName)
+        Case "IceDome"
+            Return "VQIcedome"
+    EndSwitch
+    Return "VQ" & $sMapName
 EndFunc
 
 Func _ResolveMapIDFromScriptName($sMapName)
-      $sMapName = _NormalizeMapScriptNameForLookup($sMapName)
-      Local $sVarName = $sMapName & "_Map"
+    $sMapName = _NormalizeMapScriptNameForLookup($sMapName)
+    Local $sVarName = $sMapName & "_Map"
     If IsDeclared($sVarName) Then Return Eval($sVarName)
 
     Switch $sMapName
@@ -1193,8 +1193,8 @@ Func _ResolveMapIDFromScriptName($sMapName)
 EndFunc
 
 Func _ResolveOutpostIDFromScriptName($sMapName)
-      $sMapName = _NormalizeMapScriptNameForLookup($sMapName)
-      Local $sVarName = $sMapName & "_Outpost"
+    $sMapName = _NormalizeMapScriptNameForLookup($sMapName)
+    Local $sVarName = $sMapName & "_Outpost"
     If IsDeclared($sVarName) Then Return Eval($sVarName)
 
     Switch $sMapName
@@ -1341,7 +1341,7 @@ EndFunc
 Func _MapCampaignFromFolder($sFolder)
     If StringLeft($sFolder, 5) = "EOTN_" Then Return "EOTN"
     If StringLeft($sFolder, 6) = "Proph_" Then Return "Prophecies"
-      If StringLeft($sFolder, 8) = "Caravan_" Then Return "Caravan Internal"
+    If StringLeft($sFolder, 8) = "Caravan_" Then Return "Caravan Internal"
     If StringLeft($sFolder, 9) = "Factions_" Then Return "Factions"
     If StringLeft($sFolder, 3) = "NF_" Then Return "Nightfall"
     Return ""
@@ -1354,8 +1354,8 @@ Func _MapRegionFromFolder($sFolder)
             $sRegion = StringTrimLeft($sFolder, 5)
         Case "Prophecies"
             $sRegion = StringTrimLeft($sFolder, 6)
-          Case "Caravan Internal"
-              $sRegion = StringTrimLeft($sFolder, 8)
+        Case "Caravan Internal"
+            $sRegion = StringTrimLeft($sFolder, 8)
         Case "Factions"
             $sRegion = StringTrimLeft($sFolder, 9)
         Case "Nightfall"
